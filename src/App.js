@@ -26,7 +26,7 @@ const App = () => {
       <Header />
       <Grid container spacing={2}>
         <Grid item xs={4}>
-          <ContactForm handleClick={addContactHandler} />
+          <ContactForm addContact={addContactHandler} />
         </Grid>
         <Grid item xs={8}>
           <Card

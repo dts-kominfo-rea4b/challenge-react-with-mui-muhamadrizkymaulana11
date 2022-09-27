@@ -6,13 +6,13 @@
 import { Card, TextField, Box, Button } from "@mui/material";
 import { useRef } from "react";
 
-const ContactForm = ({ handleClick }) => {
+const ContactForm = ({ addContact }) => {
   // Form berisi name, phone, email, dan photo url
   // Buatlah state newContact berupa objek sesuai dengan data yang ada
   const nameRef = useRef();
   const phoneRef = useRef();
   const emailRef = useRef();
-  const urlRef = useRef();
+  const photoRef = useRef();
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -20,10 +20,10 @@ const ContactForm = ({ handleClick }) => {
       name: nameRef.current.value,
       phone: phoneRef.current.value,
       email: emailRef.current.value,
-      url: urlRef.current.value,
+      photo: photoRef.current.value,
     };
     console.log(formAdd);
-    handleClick(formAdd);
+    addContact(formAdd);
   };
 
   return (
@@ -76,7 +76,7 @@ const ContactForm = ({ handleClick }) => {
             id="standard-required"
             label="Photo URL"
             defaultValue=""
-            inputRef={urlRef}
+            inputRef={photoRef}
           />
           <Button variant="text" type="submit">
             ADD NEW
